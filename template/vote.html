@@ -13,62 +13,59 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../media/css/mui.min.css" rel="stylesheet" />
 		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/sidenav.min.css" rel="stylesheet" />
 		<link href="../media/css/iconfont.css" rel="stylesheet" />
 	</head>
 
 	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-		<!--菜单部分-->
-		<aside id="offCanvasSide" class="mui-off-canvas-right">
+		
+		<nav class="sidenav" data-sidenav data-sidenav-toggle="#sidenav-toggle">
 			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<ul class="slider-nav">
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-wenjian1"></i>项目概况</a>
+							<a href="detail.html"><i class="icon iconfont icon-wenjian1"></i>项目概况</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-shuyuedushoucangxianxing"></i>政策法规</a>
+							<a href="list.html"><i class="icon iconfont icon-shuyuedushoucangxianxing"></i>政策法规</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-chizi"></i>补偿方案</a>
+							<a href="list.html"><i class="icon iconfont  icon-tongzhi"></i>公告公示</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont  icon-tongzhi"></i>公告公示</a>
+							<a href=""><i class="icon iconfont icon-tiaocha"></i>调查结果</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-tiaocha"></i>调查结果</a>
+							<a href=""><i class="icon iconfont icon-jieguo"></i>评估结果</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-jieguo"></i>评估结果</a>
+							<a href=""><i class="icon iconfont icon-bi"></i>签约情况</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-bi"></i>签约情况</a>
+							<a href=""><i class="icon iconfont icon-xiangmu"></i>征收工作</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-xiangmu"></i>征收工作</a>
+							<a href=""><i class="icon iconfont icon-banshizhinan"></i>办事指南</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-banshizhinan"></i>办事指南</a>
+							<a href=""><i class="icon iconfont icon-dianhua"></i>监督电话</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-dianhua"></i>监督电话</a>
+							<a href=""><i class="icon iconfont icon-fangzi"></i>房源信息</a>
 						</li>
 						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-fangzi"></i>房源信息</a>
-						</li>
-						<li class="mui-table-view-cell">
-							<a class=""><i class="icon iconfont icon-jindu"></i>拆迁进度</a>
+							<a href=""><i class="icon iconfont icon-jindu"></i>拆迁进度</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-		</aside>		
+		</nav>		
 		
 		<div class="mui-inner-wrap">
 			<header class="mui-bar top-bar">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title">在线投票</h1>
-				<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
+				<a id="sidenav-toggle" href="javascript:void(0);" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
 			</header>
 			
 			<div class="mui-content">
@@ -196,16 +193,14 @@
 				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-personal1-copy"></i>个人中心</a>
 			</footer>
 			
-			<!-- off-canvas backdrop -->
-			<div class="mui-off-canvas-backdrop"></div>
 		</div>
 			
-		</div>
 	</body>
 	
-	
+	<script src="../media/js/jquery.min.js"></script>
 	<script src="../media/js/mui.min.js"></script>
 	<script src="../media/js/common.js"></script>
+	<script src="../media/js/sidenav.min.js"></script>
 	<script src="../media/js/app.js"></script>
 	<script>
 		////初始化

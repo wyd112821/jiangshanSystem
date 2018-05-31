@@ -14,13 +14,13 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../media/css/mui.min.css" rel="stylesheet" />
 		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/sidenav.min.css" rel="stylesheet" />
 		<link href="../media/css/iconfont.css" rel="stylesheet" />
 	</head>
 
 	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-		<!--菜单部分-->
-		<aside id="offCanvasSide" class="mui-off-canvas-right">
+
+		<nav class="sidenav" data-sidenav data-sidenav-toggle="#sidenav-toggle">
 			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<ul class="slider-nav">
@@ -60,18 +60,16 @@
 					</ul>
 				</div>
 			</div>
-		</aside>		
-		
+		</nav>
+			
 		<div class="mui-inner-wrap">
 			<header class="mui-bar top-bar">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title">政策法规</h1>
-				<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
+				<a id="sidenav-toggle" href="javascript:void(0);" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
 			</header>
-			
-			
+				
 			<!--下拉刷新容器-->
-			
 			<div class="panel-box panel1-box">
 				<div class="m-banner">
 					<img src="../media/images/advert.jpg" alt="" />
@@ -101,11 +99,8 @@
 					<li class="mui-table-view-cell"><a href="detail.html"><div class="mui-media-body"><h2>中华人民共和国国务院令第590号《国有土地上房屋征收与补偿条例》</h2><span>阳光征收</span><span class="time">2018-03-28</span></div></a><div class="line"></div></li>
 					<li class="mui-table-view-cell"><a href="detail.html"><div class="mui-media-body"><h2>江山市人民政府关于印发《将上市市区征收集体土地房屋拆迁补偿暂行办法》的通知（江政发【2012】88号）</h2><span>阳光征收</span><span class="time">2018-03-28</span></div></a><div class="line"></div></li>
 					<li class="mui-table-view-cell"><a href="detail.html"><div class="mui-media-body"><h2>江山市人民政府关于印发《将上市市区征收集体土地房屋拆迁补偿暂行办法》的通知（江政发【2012】88号）</h2><span>阳光征收</span><span class="time">2018-03-28</span></div></a><div class="line"></div></li>
-				</ul>
-				
+				</ul>	
 			</div>
-			
-
 					
 			<footer class="mui-bar mui-bar-tab" id="footer-jump">
 				<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-index"></i>首页</a>
@@ -113,20 +108,18 @@
 				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-personal1-copy"></i>个人中心</a>
 			</footer>
 			
-			<!-- off-canvas backdrop -->
-			<div class="mui-off-canvas-backdrop"></div>
 		</div>
-			
-		</div>
-	</body>
 
+	</body>
+	
+	<script src="../media/js/jquery.min.js"></script>
 	<script src="../media/js/mui.min.js"></script>
 	<script src="../media/js/common.js"></script>
+	<script src="../media/js/sidenav.min.js"></script>
 	<script src="../media/js/app.js"></script>
 	<script>
 		////初始化
 		mui.init();
-		
 	</script>
 
 </html>

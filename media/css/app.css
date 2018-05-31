@@ -374,7 +374,7 @@ html{ font-size: 312.5%; }
 }
 
 .mui-popup{
-	width: 82%;
+	width: 70%;
 }
 .mui-popup .mui-popup-title{
 	font-size: 0.34rem;
@@ -385,6 +385,18 @@ html{ font-size: 312.5%; }
 .mui-popup .mui-popup-title+.mui-popup-text{
 	color: #000;
 	font-size: 0.3rem; 
+	line-height: 0.44rem;
+}
+.mui-popup-inner{
+	padding: 0.3rem;
+}
+.mui-popup-buttons{
+	height: auto;
+}
+.mui-popup-button{
+	height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.3rem;
 }
 
 .set-user{
@@ -603,6 +615,8 @@ html{ font-size: 312.5%; }
 }
 .buttons-group input[type=button], input[type=reset], input[type=submit]{
 	margin: 0 0.04rem;
+	padding: 0.12rem 0.3rem;
+	font-size: 0.2rem;
 }
 .buttons-group input[type=submit]{
 	background: #3c8bdb;
@@ -847,11 +861,14 @@ html{ font-size: 312.5%; }
     .mui-bar-tab .mui-tab-item i{
     	padding: 0.18rem 0;
     }
-    
     .mui-off-canvas-right{
     	width: 30%;
     }
     .mui-table-view-cell>a:not(.mui-btn){
-	    margin: 2px -15px;
+	    margin: 0px -15px;
 	}
+	.mui-popup{
+		width: 40%;
+	}
+	
 }
