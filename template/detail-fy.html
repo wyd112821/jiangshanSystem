@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="keywords" content="关键字" />
+        <meta name="description" content="描述" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../media/css/mui.min.css" rel="stylesheet" />
+		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/iconfont.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar top-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">房源信息</h1>
+		</header> 
+		
+		<div class="mui-content">
+			<div id="slider" class="mui-slider fy-tab">                           
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">基本介绍</a>
+					<a class="mui-control-item" href="#item2mobile">周边配套</a>
+					<a class="mui-control-item" href="#item3mobile">房型示意</a>
+					<a class="mui-control-item" href="#item4mobile">选房结果</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<h1 class="detail-title">江山市2018年第1批次征地补偿标准安置途径</h1>
+								<div class="detail-infor">                            
+									<span>访问次数：49</span>
+									<span>信息来源： 江门晚报</span>
+									<span>发布时间：2018-05-02 14:50</span>
+								</div>
+								
+								<div class="detail-text">
+									<p>江山市世纪花园社区：</p>
+									<p>因项目建设需要，拟征收农民集体土地，现将有关情况告知如下：</p>
+									<p>一、亳州市2018年第1批次</p>
+									<p>城市建设用地：江门经济开发区储备地块A-36-3</p>
+									<p>二、拟征土地位置（四至范围）</p>
+									<p>该项目位于江山市世纪花园社区，其用地范围：北邻安徽亮福新材料科技有限公司，东邻安徽省恒隆实业有限公司，南邻胡阁村耕地，西邻庄周路原工业路。</p>
+									<p>三、被征地村、组拟征土地面积</p>
+									<p>征收江山市世纪花园社区土地1.929亩。其中：耕地1.698亩，集体建设用地0.231亩。各村组被征土地实际面积及地类以实地勘测定界结果为准</p>
+									<p>四、征地补偿标准</p>
+									<p>（一）土地补偿费和安置补助费标准</p>
+									<p>根据《中华人民共和国土地管理法》和《浙江省实施〈中华人民共和国土地管理法〉办法》，初步按下表确定的土地补偿费和安置补助费标准拟定《征收土地方案》上报审批。</p>
+									<p>一、亳州市2018年第1批次</p>
+									<p>城市建设用地：江门经济开发区储备地块A-36-3</p>
+									<p>二、拟征土地位置（四至范围）</p>
+									<p>该项目位于江山市世纪花园社区，其用地范围：北邻安徽亮福新材料科技有限公司，东邻安徽省恒隆实业有限公司，南邻胡阁村耕地，西邻庄周路原工业路。</p>
+									<p>三、被征地村、组拟征土地面积</p>
+									<p>一、亳州市2018年第1批次</p>
+									<p>城市建设用地：江门经济开发区储备地块A-36-3</p>
+									<p>二、拟征土地位置（四至范围）</p>
+									<p>该项目位于江山市世纪花园社区，其用地范围：北邻安徽亮福新材料科技有限公司，东邻安徽省恒隆实业有限公司，南邻胡阁村耕地，西邻庄周路原工业路。</p>
+									<p>三、被征地村、组拟征土地面积</p>
+									<p>征收江山市世纪花园社区土地1.929亩。其中：耕地1.698亩，集体建设用地0.231亩。各村组被征土地实际面积及地类以实地勘测定界结果为准</p>
+									<p>四、征地补偿标准</p>
+									<p>（一）土地补偿费和安置补助费标准</p>
+									<p>根据《中华人民共和国土地管理法》和《浙江省实施〈中华人民共和国土地管理法〉办法》，初步按下表确定的土地补偿费和安置补助费标准拟定《征收土地方案》上报审批。</p>
+									<p>一、亳州市2018年第1批次</p>
+									<p>城市建设用地：江门经济开发区储备地块A-36-3</p>
+									<p>二、拟征土地位置（四至范围）</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<h1 class="detail-title">买房子要看小区周边配套，周边配套都包括</h1>
+								<div class="detail-infor">                            
+									<span>访问次数：49</span>
+									<span>信息来源： 江门晚报</span>
+									<span>发布时间：2018-05-02 14:50</span>
+								</div>
+								<div class="detail-text">
+									<p><img src="../media/images/pic1.jpg" data-preview-src="" data-preview-group="1" /></p>
+									<p>超市可以说是小区周边最重要的配套之一，超市和菜市场是我们日常生活中经常需要逛的地方，很多人都很喜欢下班之后在回家的路上买点菜再回家做饭的惬意生活，而这些，都是需要一座离家较近的超市才能满足的。</p>
+									<p><img src="../media/images/pic2.jpg" data-preview-src="" data-preview-group="1" /></p>
+									<p>在全国各大城市学区房炒的都是非常火爆的，因为很多中小学都是划片分学区的，房子一旦被划到了重点学校的学区内，房价就会迅速上涨。但是，抛去学区的概念，中小学校和幼儿园离家较近的话对于我们的日常生活还是有很大好处的。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<h1 class="detail-title">通禄门片区顾村源选址基地4号地块</h1>
+								<div class="detail-infor">                            
+									<span>访问次数：49</span>
+									<span>信息来源： 江门晚报</span>
+									<span>发布时间：2018-05-02 14:50</span>
+								</div>
+								<div class="detail-text">
+									<p><img src="../media/images/pic3.jpg" data-preview-src="" data-preview-group="1" /></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll4" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<h1 class="detail-title">通禄门片区顾村源选址基地4号楼层</h1>
+								<div class="detail-infor">                            
+									<span>访问次数：49</span>
+									<span>信息来源： 江门晚报</span>
+									<span>发布时间：2018-05-02 14:50</span>
+								</div>
+								<div class="detail-text">
+									<p><img src="../media/images/pic4.jpg" data-preview-src="" data-preview-group="1" /></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<footer class="mui-bar mui-bar-tab" id="footer-jump">
+			<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-index"></i>首页</a>
+			<a class="mui-tab-item" href=""><i class="icon iconfont icon-chaxun"></i>查询</a>
+			<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-personal1-copy"></i>个人中心</a>
+		</footer>
+	</body>
+	
+	<script src="../media/js/jquery.min.js"></script>
+	<script src="../media/js/mui.min.js"></script>
+	<script src="../media/js/common.js"></script>
+	<script src="../media/js/mui.zoom.js"></script>
+	<script src="../media/js/mui.previewimage.js"></script>
+	<script>
+		////初始化
+		mui.init();
+		
+		(function($) {
+			$('.mui-scroll-wrapper').scroll({
+				indicators: true //是否显示滚动条
+			});
+			var html2 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第二个选项卡子项-1</li><li class="mui-table-view-cell">第二个选项卡子项-2</li><li class="mui-table-view-cell">第二个选项卡子项-3</li><li class="mui-table-view-cell">第二个选项卡子项-4</li><li class="mui-table-view-cell">第二个选项卡子项-5</li></ul>';
+			var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
+			var item2 = document.getElementById('item2mobile');
+			var item3 = document.getElementById('item3mobile');
+			document.getElementById('slider').addEventListener('slide', function(e) {
+				if (e.detail.slideNumber === 1) {
+					if (item2.querySelector('.mui-loading')) {
+						setTimeout(function() {
+							item2.querySelector('.mui-scroll').innerHTML = html2;
+						}, 500);
+					}
+				} else if (e.detail.slideNumber === 2) {
+					if (item3.querySelector('.mui-loading')) {
+						setTimeout(function() {
+							item3.querySelector('.mui-scroll').innerHTML = html3;
+						}, 500);
+					}
+				}
+			});
+		})(mui);
+		
+		//图片放大预览
+		mui.previewImage();
+		
+		//动态设置内容滚动区域大小
+		var windowH = $(window).height();
+		var fontSize = $("html").css("font-size");
+		var multiple = parseInt(fontSize);
+		var controlContent = windowH-3.44*multiple;
+		$('.mui-control-content').attr("style","min-height:" + controlContent + "px");
+	</script>
+	
+
+</html>

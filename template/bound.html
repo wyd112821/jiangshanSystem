@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="keywords" content="关键字" />
+        <meta name="description" content="描述" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../media/css/mui.min.css" rel="stylesheet" />
+		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/iconfont.css" rel="stylesheet" />
+		<style>
+			.mui-content{ background: #ededf3;}
+		</style>
+	</head>
+
+	<body>
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+		<!--菜单部分-->
+		<aside id="offCanvasSide" class="mui-off-canvas-right">
+			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="slider-nav">
+						<li class="mui-table-view-cell">
+							<a href="detail.html"><i class="icon iconfont icon-wenjian1"></i>项目概况</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="list.html"><i class="icon iconfont icon-shuyuedushoucangxianxing"></i>政策法规</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="list.html"><i class="icon iconfont  icon-tongzhi"></i>公告公示</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-tiaocha"></i>调查结果</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-jieguo"></i>评估结果</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-bi"></i>签约情况</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-xiangmu"></i>征收工作</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-banshizhinan"></i>办事指南</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-dianhua"></i>监督电话</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-fangzi"></i>房源信息</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href=""><i class="icon iconfont icon-jindu"></i>拆迁进度</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</aside>		
+		
+		<div class="mui-inner-wrap">
+			<header class="mui-bar top-bar">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">我的设置</h1>
+				<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
+			</header>
+			
+			<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<form action="">
+						<div class="set-user">
+							<div class="pic" id="wholeImg"><img id="img1" src="../media/images/head_img.jpg"/></div>
+							<input class="upload" type="file" name="whole" id="whole" capture="camera" onchange="previewImg(this)" />
+						
+							<input class="name" type="text" placeholder="请输入姓名">
+						</div>
+						
+						<div class="set-infor">
+							<input id="number" class="number" type="number" placeholder="绑定身份证">
+							<label for="number">若您是基地或小区成员则绑定后将看到属于您的内容</label>
+							<div class="select-box">
+								<select name="certificate" id="" class="">
+									<option>身份证照片</option >
+									<option>户口本照片</option >
+									<option>房产证照片</option >
+								</select>
+								<span class="mui-icon mui-icon-arrowdown"></span>
+							</div>
+							
+							<div class="upload-btn">
+								<button type="button" class="am-btn"></button>
+								<input id="upload" type="file" accept="image/*;" capture="camera">
+								<label for="certificate"><i class="icon iconfont icon-deng"></i>请将证件照正反面分开拍照并上传</label>
+							</div>
+							<figure data-am-widget="figure" class="figure-img"></figure>
+							
+							<input type="submit" class="btn-submit" value="保存" />
+						</div>
+					</form>
+				</div>
+			</div>
+				
+			<footer class="mui-bar mui-bar-tab" id="footer-jump">
+				<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-index"></i>首页</a>
+				<a class="mui-tab-item" href=""><i class="icon iconfont icon-chaxun"></i>查询</a>
+				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-personal1-copy"></i>个人中心</a>
+			</footer>
+			
+			<!-- off-canvas backdrop -->
+			<div class="mui-off-canvas-backdrop"></div>
+		</div>
+			
+		</div>
+	</body>
+	
+	
+	<script src="../media/js/mui.min.js"></script>
+	<script src="../media/js/jquery.min.js"></script>
+	<script src="../media/js/common.js"></script>
+	<script src="../media/js/app.js"></script>
+	<script>
+		////初始化
+		mui.init({});
+		
+		function previewImg(file){
+		    //判断是否支持FileReader
+		    if (window.FileReader) {
+		        var reader = new FileReader();
+		    } else {
+		        alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+		    }
+		    var preDiv = document.getElementById("wholeImg");
+		    //获取图片
+		    if (file.files && file.files[0]){
+		        var reader = new FileReader(); 
+		        reader.onload = function(e){  
+		            var img = document.getElementById("img1");
+		            img.setAttribute("src",e.target.result);
+		        }
+		        reader.readAsDataURL(file.files[0]);
+		    }
+		}
+		
+		
+		
+		var demo_h5_upload_ops = {
+		    init:function(){
+		        this.eventBind();
+		    },
+		    eventBind:function(){
+		        var that = this;
+		        $("#upload").change(function(){
+		            var reader = new FileReader();
+		            reader.onload = function (e) {
+		                that.compress(this.result);
+		            };
+		            reader.readAsDataURL(this.files[0]);
+		        });
+		    },
+		    compress : function (res) {
+		        var that = this;
+		        var img = new Image(),
+		            maxH = 300;
+		 
+		        img.onload = function () {
+		            var cvs = document.createElement('canvas'),
+		                ctx = cvs.getContext('2d');
+		 
+		            if(img.height > maxH) {
+		                img.width *= maxH / img.height;
+		                img.height = maxH;
+		            }
+		            cvs.width = img.width;
+		            cvs.height = img.height;
+		 
+		            ctx.clearRect(0, 0, cvs.width, cvs.height);
+		            ctx.drawImage(img, 0, 0, img.width, img.height);
+		            var dataUrl = cvs.toDataURL('image/jpeg', 1);
+		            
+		            $(".figure-img").append("<span class='img_wrap'><i class='icon iconfont icon-delete'></i><img src='" + dataUrl +"'></span>");
+		            $('.img_wrap i').on('tap',function(){
+				    	$(this).parent().detach();
+				    })
+		            // 上传略
+		            that.upload( dataUrl );
+		        };
+		 
+		        img.src = res;
+		    },
+		    upload:function( image_data ){
+		        /*这里写上次方法,图片流是base64_encode的*/
+		    }
+		};
+		 
+		 
+		$(document).ready( function(){
+		    demo_h5_upload_ops.init();
+		} );
+		
+		
+		
+	</script>
+	
+
+</html>

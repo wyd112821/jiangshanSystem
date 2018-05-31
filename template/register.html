@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="keywords" content="关键字" />
+        <meta name="description" content="描述" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../media/css/mui.min.css" rel="stylesheet" />
+		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/iconfont.css" rel="stylesheet" />
+		<link href="../media/css/mui.picker.min.css" rel="stylesheet" />
+	</head>
+
+	<body class="gradient-bg">
+		<div class="mui-content plat-content">
+			<h1>江山市阳光征收<br/>信息公开平台</h1>
+			<form action="">
+				<div class="plat-form">
+					<div class="plat-row">
+						<input class="name" type="text" placeholder="用户名">
+						<i class="icon iconfont icon-user"></i>
+					</div>
+					<div class="plat-row">
+						<input id="number" class="number" type="number" placeholder="手机号">
+						<i class="icon iconfont icon-shouji"></i>
+					</div>
+					<div class="plat-row">
+						<input id="" class="code" type="text" placeholder="验证码">
+						<i class="icon iconfont icon-suo"></i>
+						<span><img src="../media/images/codes.png" alt="" /></span>
+					</div>
+					<div class="plat-row mui-checkbox mui-left">
+						<label>我同意用户协议和隐私政策</label>
+						<input name="checkbox" type="checkbox">
+					</div>
+					<div class="plat-row plat-margin-top">
+						<input class="register-btn register-button" type="button" value="立即注册" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+	
+	<script src="../media/js/jquery.min.js"></script>
+	<script src="../media/js/mui.min.js"></script>
+	<script src="../media/js/mui.picker.min.js"></script>
+	<script src="../media/js/common.js"></script>
+	<script>
+		//动态设置背景区域大小
+		var windowH = $(window).height();
+		$('.mui-content').attr("style","min-height:" + windowH + "px");
+	</script>
+
+</html>

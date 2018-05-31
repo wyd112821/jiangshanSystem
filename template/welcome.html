@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="keywords" content="关键字" />
+        <meta name="description" content="描述" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../media/css/mui.min.css" rel="stylesheet" />
+		<link href="../media/css/guide.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="guide-box">
+				<a id="jump-home" class="guide-btn">
+					<img src="../media/images/guide_title.png" alt="江山市阳光征收信息公开平台" />
+				</a>
+			</div>
+		</div>
+	</body>
+	
+	<script src="../media/js/jquery.min.js"></script>
+	<script src="../media/js/mui.min.js"></script>
+	<script>
+		////初始化
+		mui.init();
+		
+		//跳转首页
+		document.getElementById("jump-home").addEventListener("tap",function() {
+            mui.openWindow({
+                url:"home.html"
+            })
+            return false
+        })
+		
+		//动态设置背景区域大小
+		var windowH = $(window).height();
+		$('.guide-box').attr("style","min-height:" + windowH + "px");
+
+	</script>
+
+</html>

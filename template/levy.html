@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="keywords" content="关键字" />
+        <meta name="description" content="描述" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../media/css/mui.min.css" rel="stylesheet" />
+		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/iconfont.css" rel="stylesheet" />
+		<link href="../media/css/mui.picker.min.css" rel="stylesheet" />
+	</head>
+
+	<body class="gray-bg">
+		<header class="mui-bar top-bar">
+			<h1 class="mui-title">江山市阳光征收信息公开平台</h1>
+		</header>
+
+		<div class="mui-content">
+			<form action="">
+				<div class="set-infor">
+					<div class="select-box">
+						<button id='demo6' data-options='{"type":"month"}' class="btn mui-btn mui-btn-block">年份</button>
+						<span class="mui-icon mui-icon-arrowdown"></span>
+					</div>
+					
+					<div class="select-box">
+						<select name="certificate" id="" class="">
+							<option>征收项目</option >
+							<option>项目1</option >
+							<option>项目2</option >
+							<option>项目3</option >
+						</select>
+						<span class="mui-icon mui-icon-arrowdown"></span>
+					</div>
+					
+					<input type="submit" class="btn-submit btn1-submit" value="保存" />
+				</div>
+			</form>
+		</div>
+		
+		<footer class="mui-bar mui-bar-tab" id="footer-jump">
+			<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-index"></i>首页</a>
+			<a class="mui-tab-item" href=""><i class="icon iconfont icon-chaxun"></i>查询</a>
+			<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-personal1-copy"></i>个人中心</a>
+		</footer>
+	</body>
+	
+	<script src="../media/js/mui.min.js"></script>
+	<script src="../media/js/mui.picker.min.js"></script>
+	<script src="../media/js/common.js"></script>
+	<script>
+		(function($) {
+			$.init();
+			var result = $('#demo6')[0];
+			var btns = $('.btn');
+			btns.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('id');
+					/*
+					 * 首次显示时实例化组件
+					 * 示例为了简洁，将 options 放在了按钮的 dom 上
+					 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+					 */
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						/*
+						 * rs.value 拼合后的 value
+						 * rs.text 拼合后的 text
+						 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+						 * rs.m 月，用法同年
+						 * rs.d 日，用法同年
+						 * rs.h 时，用法同年
+						 * rs.i 分（minutes 的第二个字母），用法同年
+						 */
+						result.innerText = rs.text;
+						/* 
+						 * 返回 false 可以阻止选择框的关闭
+						 * return false;
+						 */
+						/*
+						 * 释放组件资源，释放后将将不能再操作组件
+						 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+						 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+						 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+						 */
+						picker.dispose();
+					});
+				}, false);
+			});
+		})(mui);
+	</script>
+
+</html>
