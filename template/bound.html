@@ -14,16 +14,16 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../media/css/mui.min.css" rel="stylesheet" />
 		<link href="../media/css/app.css" rel="stylesheet" />
+		<link href="../media/css/sidenav.min.css" rel="stylesheet" />
 		<link href="../media/css/iconfont.css" rel="stylesheet" />
 		<style>
-			.mui-content{ background: #ededf3;}
+			body{ background: #ededf3;}
 		</style>
 	</head>
 
 	<body>
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-		<!--菜单部分-->
-		<aside id="offCanvasSide" class="mui-off-canvas-right">
+
+		<nav class="sidenav" data-sidenav data-sidenav-toggle="#sidenav-toggle">
 			<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<ul class="slider-nav">
@@ -63,67 +63,63 @@
 					</ul>
 				</div>
 			</div>
-		</aside>		
+		</nav>
 		
 		<div class="mui-inner-wrap">
 			<header class="mui-bar top-bar">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title">我的设置</h1>
-				<a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
+				<a id="sidenav-toggle" href="javascript:void(0);" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
 			</header>
 			
-			<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
-				<div class="mui-scroll">
-					<form action="">
-						<div class="set-user">
-							<div class="pic" id="wholeImg"><img id="img1" src="../media/images/head_img.jpg"/></div>
-							<input class="upload" type="file" name="whole" id="whole" capture="camera" onchange="previewImg(this)" />
-						
-							<input class="name" type="text" placeholder="请输入姓名">
+			<div class="panel-box panel1-box">
+				<form action="">
+					<div class="set-user">
+						<div class="pic" id="wholeImg"><img id="img1" src="../media/images/head_img.jpg"/></div>
+						<input class="upload" type="file" name="whole" id="whole" capture="camera" onchange="previewImg(this)" />
+					
+						<input class="name" type="text" placeholder="请输入姓名">
+					</div>
+					
+					<div class="set-infor">
+						<input id="number" class="number" type="number" placeholder="绑定身份证">
+						<label for="number">若您是基地或小区成员则绑定后将看到属于您的内容</label>
+						<div class="select-box">
+							<select name="certificate" id="" class="">
+								<option>身份证照片</option >
+								<option>户口本照片</option >
+								<option>房产证照片</option >
+							</select>
+							<span class="mui-icon mui-icon-arrowdown"></span>
 						</div>
 						
-						<div class="set-infor">
-							<input id="number" class="number" type="number" placeholder="绑定身份证">
-							<label for="number">若您是基地或小区成员则绑定后将看到属于您的内容</label>
-							<div class="select-box">
-								<select name="certificate" id="" class="">
-									<option>身份证照片</option >
-									<option>户口本照片</option >
-									<option>房产证照片</option >
-								</select>
-								<span class="mui-icon mui-icon-arrowdown"></span>
-							</div>
-							
-							<div class="upload-btn">
-								<button type="button" class="am-btn"></button>
-								<input id="upload" type="file" accept="image/*;" capture="camera">
-								<label for="certificate"><i class="icon iconfont icon-deng"></i>请将证件照正反面分开拍照并上传</label>
-							</div>
-							<figure data-am-widget="figure" class="figure-img"></figure>
-							
-							<input type="submit" class="btn-submit" value="保存" />
+						<div class="upload-btn">
+							<button type="button" class="am-btn"></button>
+							<input id="upload" type="file" accept="image/*;" capture="camera">
+							<label for="certificate"><i class="icon iconfont icon-deng"></i>请将证件照正反面分开拍照并上传</label>
 						</div>
-					</form>
-				</div>
+						<figure data-am-widget="figure" class="figure-img"></figure>
+						
+						<input type="submit" class="btn-submit" value="保存" />
+					</div>
+				</form>
 			</div>
-				
+			
 			<footer class="mui-bar mui-bar-tab" id="footer-jump">
 				<a class="mui-tab-item" href="home.html"><i class="icon iconfont icon-index"></i>首页</a>
 				<a class="mui-tab-item" href=""><i class="icon iconfont icon-chaxun"></i>查询</a>
 				<a class="mui-tab-item" href="login.html"><i class="icon iconfont icon-personal1-copy"></i>个人中心</a>
 			</footer>
-			
-			<!-- off-canvas backdrop -->
-			<div class="mui-off-canvas-backdrop"></div>
+
 		</div>
 			
-		</div>
 	</body>
 	
 	
-	<script src="../media/js/mui.min.js"></script>
 	<script src="../media/js/jquery.min.js"></script>
+	<script src="../media/js/mui.min.js"></script>
 	<script src="../media/js/common.js"></script>
+	<script src="../media/js/sidenav.min.js"></script>
 	<script src="../media/js/app.js"></script>
 	<script>
 		////初始化

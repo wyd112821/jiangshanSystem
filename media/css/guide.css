@@ -2,12 +2,9 @@
 	width: 100%;
 	background: url(../images/guide_bg.jpg) 50% 0 no-repeat fixed;
 	background-size: cover;
-}
-.guide-btn{
-	display: block;
-	padding: 19% 22% 0;
+	padding-top: 90px;
 }
 .guide-btn img{
-	height: auto;
-    width: 100%;
+	display: block;
+    margin: 0 auto;
 }

@@ -425,7 +425,6 @@ html{ font-size: 312.5%; }
 	margin-left: -1.2rem;
 	margin-top: -1.2rem;
 	width: 2.4rem;
-	height: 2.4rem;
 }
 .set-user .upload{
 	position: absolute;
@@ -481,14 +480,14 @@ html{ font-size: 312.5%; }
 .set-infor .select-box span.mui-icon{
 	position: absolute;
 	right: 0.34rem;
-	top: 12px;
+	top: 0.2rem;
 	font-size: 0.49rem;
 }
 .set-infor select{
 	height: 0.9rem;
 	border: none;
 	border-radius: 50px;
-	font-size: 0.32rem;
+	font-size: 0.26rem;
 	padding: 0 0.45rem;
 	margin-bottom: 0.4rem;
 }
@@ -627,13 +626,12 @@ html{ font-size: 312.5%; }
 }
 .detail-collect .title{
 	border-bottom: 1px solid #ddd;
-	overflow: hidden;
 }
 .detail-collect .title h2{
 	font-size: 0.32rem;
 	color: #3c8bdb;
-	height: 0.68rem;
-	line-height: 0.68rem;
+	height: 0.74rem;
+	line-height: 0.74rem;
 	padding: 0 0.16rem;
 	float: left;
 	border-bottom: 1px solid #007AFF;
@@ -642,22 +640,27 @@ html{ font-size: 312.5%; }
 	margin-top: 0.26rem;
 }
 .detail-collect .mui-input-row label{
-	width: 20%;
-	padding: 0.2rem;
-	font-size: 0.28rem;
+	width: auto;
+    padding: 0 0.2rem;
+    font-size: 0.28rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
 }
 .detail-collect .mui-input-row label~input, .detail-collect .mui-input-row label~textarea{
 	width: 80%;
-	font-size: 0.28rem;
+	font-size: 0.2rem;
+	float: left;
 }
 .detail-collect .mui-input-row .text{
 	border: 1px solid #ddd;
-	border-radius: 50px;
-	padding: 0.2rem;
+    border-radius: 50px;
+    padding: 0.2rem;
+    height: 0.68rem;
+    float: left;
 }
 .detail-collect .mui-input-row textarea{
 	border: 1px solid #ddd;
-	padding: 0.2rem;
+	padding: 0.14rem 0.2rem;
 	height: 4rem;
 }
 .detail-collect .mui-input-row input[type=submit]{
@@ -668,23 +671,24 @@ html{ font-size: 312.5%; }
 	border: 1px solid #ddd;
 	border-radius: 50px;
 	padding: 0.2rem;
-	width: 55%;
+	width: 50%;
+	height: 0.68rem;
 }
 .detail-collect .mui-input-row .code-img{
 	display: inline-block;
 	width: 25%;
-	float: right;
-	text-align: right;
+	text-align: left;
 }
 .detail-collect .mui-input-row .code-img img{
 	height: 0.72rem;
+	margin-left: 0.3rem;
 }
 
 .set-infor .mui-btn-block{
 	height: 0.9rem;
     border: none;
     border-radius: 50px;
-    font-size: 0.32rem;
+    font-size: 0.26rem;
     padding: 0 0.45rem;
     margin-bottom: 0.4rem;
     text-align: left;
@@ -727,7 +731,7 @@ html{ font-size: 312.5%; }
 	height: 0.9rem;
     border: none;
     border-radius: 50px;
-    font-size: 0.32rem;
+    font-size: 0.26rem;
     padding: 0 0.45rem 0 0.85rem;
     background: #76bdec;
     color: #fff;
@@ -752,13 +756,13 @@ html{ font-size: 312.5%; }
 }
 .plat-row span{
 	position: absolute;
-	right: 0;
+	left: 3.8rem;
 	top: 0;
 	display: block;
 	width: 1.96rem;
 	height: 0.9rem;
     border-radius: 50px;
-    background: #6ec4ef;
+    background: #76bdec;
     overflow: hidden;
 }
 .plat-row span img{
@@ -767,21 +771,22 @@ html{ font-size: 312.5%; }
 	margin: 0 auto;
 }
 .plat-margin-top{
-	margin-top: 1rem;
-	text-align: center;
+	margin-top: 0.6rem;
 }
 .plat-margin-top input[type=button]{
-	width: 2.4rem;
+	width: 47%;
 	height: 0.9rem;
 	border-radius: 50px;
     background: #fff;
     color: #3b8cdc;
     border: none;
     font-size: 0.36rem;
-    margin: 0 0.2rem;
+}
+.plat-margin-top input.register-btn{
+	margin-left:0.2rem;
 }
 .plat-margin-top input.register-button{
-	width: 5.8rem;
+	width: 100%;
 	margin: 0;
 }
 .plat-row label{
@@ -793,7 +798,7 @@ html{ font-size: 312.5%; }
 	
 }
 .mui-checkbox.mui-left input[type=checkbox]{
-	top: 0px;
+	top: -2px;
     left: 0.28rem;
 }
 .plat-row input[type=checkbox]:before{
@@ -870,5 +875,8 @@ html{ font-size: 312.5%; }
 	.mui-popup{
 		width: 40%;
 	}
-	
+	.set-infor, .detail-text, .detail-collect, .plat-form{
+		width: 10rem;
+    	margin: 0 auto;
+	}
 }
