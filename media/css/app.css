@@ -368,6 +368,7 @@ html{ font-size: 312.5%; }
 }
 .detail-text p{
 	color: #444;
+	font-size: 0.24rem;
 }
 .detail-text p img{
 	padding: 0.2rem 0;

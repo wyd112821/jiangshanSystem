@@ -19,8 +19,9 @@
 	<body>
 		<div class="mui-content">
 			<div class="guide-box">
+				<div class="logo-box"><img src="../media/images/logo.png" /></div>
 				<a href="home.html" class="guide-btn">
-					<img src="../media/images/guide_title.png" alt="江山市阳光征收信息公开平台" />
+					<img class="logo" src="../media/images/guide_title.png" alt="江山市阳光征收信息公开平台" />
 				</a>
 			</div>
 		</div>
@@ -37,7 +38,7 @@
 		var windowH = $(window).height();
 		var imgH = windowH-180;
 		$('.guide-box').attr("style","min-height:" + windowH + "px");
-		$('.guide-box img').attr("style","height:" + imgH + "px");
+		$('.guide-box .logo').attr("style","height:" + imgH + "px");
 	</script>
 
 </html>

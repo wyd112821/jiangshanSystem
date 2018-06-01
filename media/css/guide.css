@@ -1,4 +1,5 @@
 .guide-box{
+	position: relative;
 	width: 100%;
 	background: url(../images/guide_bg.jpg) 50% 0 no-repeat fixed;
 	background-size: cover;
@@ -7,4 +8,26 @@
 .guide-btn img{
 	display: block;
     margin: 0 auto;
+}
+
+.logo-box{
+	display: none;
+	position: absolute;
+	top: 0.6rem;
+	right: 0.6rem;
+	width: 8rem;
+	height: 8rem;
+}
+.logo-box img{
+	width: 8rem;
+}
+
+
+@media screen and (min-width:1200px) and (max-width:1940px){
+	.guide-box{
+		background: url(../images/guide_bg_large.jpg) 50% 0 no-repeat fixed;
+	}
+	.logo-box{
+		display: block;
+	}
 }
